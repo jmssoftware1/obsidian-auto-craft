@@ -9,7 +9,7 @@ export function Intro() {
         <div className="lg:col-span-8 lg:pr-10">
           <Reveal>
             <SectionIndex index="02 / 08" label="Posicionamento" />
-            <h2 className="section-title relative z-10 mt-12 max-w-[11ch] font-display font-extrabold uppercase">
+            <h2 className="section-title relative z-10 mt-12 max-w-none font-display font-extrabold uppercase sm:max-w-[11ch]">
               Detalhamento não é limpeza.<br />
               <span className="text-ink-dim">É controle sobre a luz.</span>
             </h2>
