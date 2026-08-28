@@ -41,7 +41,7 @@ export function Hero() {
             style={{ animationDelay: "120ms" }}
           >
             <span className="label shrink-0 text-accent">01 / 08</span>
-            <span className="h-px w-10 shrink-0 bg-accent/40 md:w-16" aria-hidden="true" />
+            <span className="hidden h-px w-10 shrink-0 bg-accent/40 sm:block md:w-16" aria-hidden="true" />
             <span className="label truncate">Estúdio de estética automotiva</span>
           </div>
 

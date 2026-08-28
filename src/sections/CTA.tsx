@@ -24,21 +24,21 @@ export function CTA() {
         style={{
           transform: `translate3d(0, ${(progress - 0.5) * 56}px, 0) scale(${1.1 - progress * 0.04})`,
         }}
-        className="absolute inset-0 h-full w-full object-cover object-[65%_center] opacity-45 will-change-transform"
+        className="absolute inset-0 h-full w-full object-cover object-[65%_center] opacity-60 will-change-transform"
       />
-      <div className="absolute inset-0 bg-bg/75" aria-hidden="true" />
+      <div className="absolute inset-0 bg-bg/55" aria-hidden="true" />
       <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,10,11,0.92),rgba(10,10,11,0.35)_70%)]"
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,10,11,0.9),rgba(10,10,11,0.15)_75%)]"
         aria-hidden="true"
       />
 
       <div className="shell relative py-28 md:py-44 lg:py-56">
         <Reveal className="max-w-4xl">
           <SectionIndex index="08 / 08" label="Agendamento" />
-          <h2 className="display mt-9 text-[clamp(2.2rem,6.4vw,4.5rem)] leading-[0.95] md:mt-12">
-            <span className="block">Traga o carro</span>
-            <span className="block">para uma</span>
-            <span className="block text-accent">avaliação sob luz</span>
+          <h2 className="display mt-9 text-[clamp(1.9rem,5.4vw,4rem)] leading-[0.95] md:mt-12">
+            <span className="block">Traga o carro para</span>
+            <span className="block">uma avaliação</span>
+            <span className="block text-accent">sob luz</span>
           </h2>
           <p className="mt-9 max-w-[44ch] text-[0.9375rem] leading-[1.85] text-ink-dim md:mt-12">
             A avaliação leva cerca de 40 minutos: medimos a pintura, mostramos o que dá para
