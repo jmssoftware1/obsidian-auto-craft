@@ -1,48 +1,4 @@
 import detailImage from "@/assets/detail.jpg";
 import { Reveal } from "@/components/Reveal";
 import { SectionIndex } from "@/components/SectionIndex";
-
-export function Intro() {
-  return (
-    <section className="relative border-t border-line bg-bg py-20 md:py-32 lg:py-40">
-      <div className="shell grid grid-cols-1 gap-16 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <Reveal>
-            <SectionIndex index="02 / 08" label="Posicionamento" />
-            <p className="mt-10 font-display text-[clamp(1.75rem,4vw,3.25rem)] font-extrabold uppercase leading-[1.05] tracking-[-0.015em] text-ink">
-              Trabalhamos com poucos carros por semana porque acabamento não se acelera.
-            </p>
-            <p className="mt-8 max-w-lg text-sm leading-7 text-ink-dim">
-              O estúdio nasceu de uma decisão simples: recusar volume para manter controle. Cada
-              veículo entra com avaliação registrada, sai com relatório do que foi corrigido e do
-              que foi preservado — inclusive quando a resposta é não polir.
-            </p>
-          </Reveal>
-
-          <Reveal delay={120} className="mt-16 flex flex-wrap gap-16 border-t border-line pt-10">
-            <div>
-              <p className="font-mono text-4xl text-accent md:text-5xl">184</p>
-              <p className="label mt-3">Veículos atendidos por ano</p>
-            </div>
-            <div>
-              <p className="font-mono text-4xl text-ink md:text-5xl">6</p>
-              <p className="label mt-3">Vagas por semana</p>
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal delay={200} className="lg:col-span-5">
-          <img
-            src={detailImage}
-            alt="Gotas de água sobre pintura preta espelhada"
-            width={1920}
-            height={1088}
-            loading="lazy"
-            className="h-64 w-full object-cover md:h-96 lg:h-[520px]"
-          />
-          <p className="label mt-4">Superfície selada · repelência hidrofóbica</p>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
+export function Intro() { return <section id="posicionamento" className="relative overflow-hidden border-t border-line bg-bg py-24 md:py-36 lg:py-44"><div className="shell grid grid-cols-1 gap-20 lg:grid-cols-12 lg:gap-8"><div className="lg:col-span-8 lg:pr-10"><Reveal><SectionIndex index="02 / 08" label="Posicionamento" /><p className="mt-12 max-w-4xl font-display text-[clamp(2.25rem,5.1vw,5.1rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">Detalhamento não é limpeza.<br /><span className="text-ink-dim">É controle sobre a luz.</span></p></Reveal><Reveal delay={120} className="mt-12 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2"><p className="max-w-md text-sm leading-7 text-ink-dim">Cada superfície conta uma história diferente. O trabalho começa quando o carro entra no box — e só termina quando cada reflexo está no lugar.</p><p className="label max-w-xs leading-7 text-ink-dim">Pouco volume.<br />Mais tempo por carro.<br />Mais atenção por centímetro.</p></Reveal></div><Reveal delay={180} className="relative lg:col-span-4 lg:pt-20"><div className="image-frame aspect-[4/5] overflow-hidden"><img src={detailImage} alt="Gotas de água sobre pintura preta espelhada" width={1920} height={1088} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] hover:scale-105" /></div><div className="mt-4 flex justify-between gap-4"><span className="label">Superfície / 01</span><span className="label text-accent-dim">reflexo controlado</span></div></Reveal></div></section>; }
