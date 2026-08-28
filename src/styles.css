@@ -17,7 +17,7 @@
 @keyframes hero-in{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @media(max-width:767px){
   .hero-title{font-size:clamp(2.35rem,10vw,4rem);line-height:.94;letter-spacing:-.05em;max-width:100%}
-  .section-title{font-size:clamp(1.25rem,8vw,2.2rem);line-height:.98;letter-spacing:-.04em;max-width:100%;}
+  .section-title{font-size:clamp(1.25rem,7vw,2rem);line-height:1.01;letter-spacing:-.04em;max-width:100%;}
   .detail-title{font-size:clamp(1.55rem,9vw,3rem);line-height:.88;letter-spacing:-.05em;max-width:100%;}
   .lightbox-backdrop{backdrop-filter:blur(10px)}
 }
