@@ -2,45 +2,58 @@ import detailImage from "@/assets/detail.jpg";
 import { Reveal } from "@/components/Reveal";
 import { SectionIndex } from "@/components/SectionIndex";
 
+const principles = [
+  {
+    title: "Escala reduzida",
+    body: "Poucos veículos em paralelo, para que nenhuma etapa dependa de pressa.",
+  },
+  {
+    title: "Registro do processo",
+    body: "Cada avaliação e correção é documentada e devolvida ao proprietário.",
+  },
+];
+
 export function Intro() {
   return (
-    <section className="relative border-t border-line bg-bg py-20 md:py-32 lg:py-40">
-      <div className="shell grid grid-cols-1 gap-16 lg:grid-cols-12">
+    <section className="relative border-t border-line bg-bg py-24 md:py-36 lg:py-48">
+      <div className="shell grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-x-6">
         <div className="lg:col-span-7">
           <Reveal>
             <SectionIndex index="02 / 08" label="Posicionamento" />
-            <p className="mt-10 font-display text-[clamp(1.75rem,4vw,3.25rem)] font-extrabold uppercase leading-[1.05] tracking-[-0.015em] text-ink">
-              Trabalhamos com poucos carros por semana porque acabamento não se acelera.
+            <p className="display mt-9 max-w-[18ch] text-[clamp(1.85rem,6vw,3.5rem)] leading-[1.04] text-ink md:mt-12">
+              Acabamento não se acelera.
             </p>
-            <p className="mt-8 max-w-lg text-sm leading-7 text-ink-dim">
+            <p className="mt-8 max-w-[46ch] text-[0.9375rem] leading-[1.85] text-ink-dim">
               O estúdio nasceu de uma decisão simples: recusar volume para manter controle. Cada
-              veículo entra com avaliação registrada, sai com relatório do que foi corrigido e do
+              veículo entra com avaliação registrada e sai com relatório do que foi corrigido e do
               que foi preservado — inclusive quando a resposta é não polir.
             </p>
           </Reveal>
 
-          <Reveal delay={120} className="mt-16 flex flex-wrap gap-16 border-t border-line pt-10">
-            <div>
-              <p className="font-mono text-4xl text-accent md:text-5xl">184</p>
-              <p className="label mt-3">Veículos atendidos por ano</p>
-            </div>
-            <div>
-              <p className="font-mono text-4xl text-ink md:text-5xl">6</p>
-              <p className="label mt-3">Vagas por semana</p>
-            </div>
-          </Reveal>
+          <div className="mt-14 grid grid-cols-1 gap-px border-t border-line sm:grid-cols-2 md:mt-20">
+            {principles.map((item, i) => (
+              <Reveal key={item.title} delay={120 + i * 120} className="pt-8 sm:pr-10">
+                <p className="label text-accent">0{i + 1}</p>
+                <h3 className="display mt-4 text-lg tracking-[-0.01em] text-ink md:text-xl">
+                  {item.title}
+                </h3>
+                <p className="mt-3 max-w-[34ch] text-sm leading-[1.8] text-ink-dim">{item.body}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
-        <Reveal delay={200} className="lg:col-span-5">
+        <Reveal delay={200} variant="veil" className="lg:col-span-5 lg:pt-4">
           <img
             src={detailImage}
             alt="Gotas de água sobre pintura preta espelhada"
             width={1920}
             height={1088}
             loading="lazy"
-            className="h-64 w-full object-cover md:h-96 lg:h-[520px]"
+            decoding="async"
+            className="aspect-[4/5] w-full object-cover md:aspect-[3/4] lg:aspect-[4/6]"
           />
-          <p className="label mt-4">Superfície selada · repelência hidrofóbica</p>
+          <p className="label mt-5">Superfície selada · repelência hidrofóbica</p>
         </Reveal>
       </div>
     </section>
