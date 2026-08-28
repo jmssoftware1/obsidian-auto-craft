@@ -9,7 +9,7 @@ export function Intro() {
         <div className="lg:col-span-8 lg:pr-10">
           <Reveal>
             <SectionIndex index="02 / 08" label="Posicionamento" />
-            <h2 className="section-title mt-12 max-w-4xl font-display font-extrabold uppercase">
+            <h2 className="section-title relative z-10 mt-12 max-w-[11ch] font-display font-extrabold uppercase">
               Detalhamento não é limpeza.<br />
               <span className="text-ink-dim">É controle sobre a luz.</span>
             </h2>
@@ -19,7 +19,7 @@ export function Intro() {
             <p className="label max-w-xs leading-7 text-ink-dim">Pouco volume.<br />Mais tempo por carro.<br />Mais atenção por centímetro.</p>
           </Reveal>
         </div>
-        <Reveal delay={180} className="relative lg:col-span-4 lg:pt-20">
+        <Reveal delay={180} className="relative z-0 lg:col-span-4 lg:pt-20">
           <div className="image-frame reveal-image aspect-[4/5] overflow-hidden">
             <img src={detailImage} alt="Gotas de água sobre pintura preta espelhada" width={1920} height={1088} loading="lazy" className="h-full w-full object-cover" />
           </div>
