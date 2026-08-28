@@ -30,30 +30,13 @@
 
   html {
     scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
   }
 
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-
-  section[id] {
-    scroll-margin-top: 5rem;
-  }
-
-  h1,
-  h2,
-  h3 {
-    text-wrap: balance;
-  }
-
-  p {
-    text-wrap: pretty;
   }
 
   ::selection {
@@ -71,11 +54,7 @@
   margin-inline: auto;
   width: 100%;
   max-width: 1440px;
-  padding-inline: 22px;
-
-  @media (min-width: 768px) {
-    padding-inline: 40px;
-  }
+  padding-inline: 24px;
 
   @media (min-width: 1024px) {
     padding-inline: 80px;
@@ -84,90 +63,23 @@
 
 @utility label {
   font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.26em;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  line-height: 1.4;
   color: var(--color-ink-dim);
-
-  @media (min-width: 768px) {
-    font-size: 0.6875rem;
-  }
-}
-
-@utility display {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.94;
-  letter-spacing: -0.022em;
-}
-
-@utility rule {
-  height: 1px;
-  width: 100%;
-  background: var(--color-line);
-}
-
-@utility no-scrollbar {
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition:
-    opacity 1100ms var(--ease-obsidian),
-    transform 1100ms var(--ease-obsidian);
-  will-change: opacity, transform;
+    opacity 700ms var(--ease-obsidian),
+    transform 700ms var(--ease-obsidian);
 
   &[data-visible="true"] {
     opacity: 1;
     transform: none;
   }
-}
-
-@utility reveal-soft {
-  opacity: 0;
-  transition: opacity 1200ms var(--ease-obsidian);
-
-  &[data-visible="true"] {
-    opacity: 1;
-  }
-}
-
-@utility reveal-veil {
-  opacity: 0;
-  clip-path: inset(0 0 14% 0);
-  transition:
-    opacity 1200ms var(--ease-obsidian),
-    clip-path 1400ms var(--ease-obsidian);
-  will-change: opacity, clip-path;
-
-  &[data-visible="true"] {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes obsidian-enter {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@utility enter {
-  opacity: 0;
-  animation: obsidian-enter 1100ms var(--ease-obsidian) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -181,14 +93,4 @@
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
-
-  .reveal,
-  .reveal-soft,
-  .reveal-veil,
-  .enter {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-  }
 }
-

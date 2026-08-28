@@ -2,49 +2,38 @@ import { brand, contact, navigationItems, socialLinks } from "@/data/navigation"
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-bg-alt py-16 md:py-20">
-      <div className="shell grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-12">
-        <div className="col-span-2 min-w-0 md:col-span-5">
-          <p className="font-display text-[0.8rem] font-extrabold uppercase tracking-[0.34em]">
+    <footer className="border-t border-line bg-bg-alt py-12">
+      <div className="shell flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+        <div className="min-w-0">
+          <p className="font-display text-sm font-extrabold uppercase tracking-[0.28em]">
             {brand.wordmark} <span className="text-accent-dim">{brand.wordmarkSuffix}</span>
           </p>
-          <p className="label mt-5">{contact.studio}</p>
-          <p className="mt-4 max-w-[34ch] text-xs leading-[1.9] text-ink-dim">{contact.address}</p>
+          <p className="label mt-3">{contact.studio}</p>
+          <p className="mt-3 text-xs leading-6 text-ink-dim">{contact.address}</p>
         </div>
 
-        <nav aria-label="Rodapé" className="flex flex-col gap-4 md:col-span-2">
+        <nav aria-label="Rodapé" className="flex flex-col gap-3">
           {navigationItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="label transition-colors duration-500 hover:text-ink"
-            >
+            <a key={item.href} href={item.href} className="label hover:text-ink">
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex flex-col gap-4 md:col-span-2">
+        <div className="flex flex-col gap-3">
           {socialLinks.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="label transition-colors duration-500 hover:text-ink"
-            >
+            <a key={item.label} href={item.href} className="label hover:text-ink">
               {item.label}
             </a>
           ))}
         </div>
 
-        <div className="col-span-2 flex flex-col gap-4 md:col-span-3">
-          <a
-            href={`mailto:${contact.email}`}
-            className="label break-all transition-colors duration-500 hover:text-ink"
-          >
+        <div className="flex flex-col gap-3">
+          <a href={`mailto:${contact.email}`} className="label hover:text-ink">
             {contact.email}
           </a>
           <span className="label">{contact.phone}</span>
-          <span className="label text-ink-dim/60">
+          <span className="label text-ink-dim/70">
             © {new Date().getFullYear()} — projeto conceitual fictício
           </span>
         </div>
