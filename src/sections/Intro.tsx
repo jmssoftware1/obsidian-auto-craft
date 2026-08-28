@@ -1,4 +1,31 @@
 import detailImage from "@/assets/detail.jpg";
 import { Reveal } from "@/components/Reveal";
 import { SectionIndex } from "@/components/SectionIndex";
-export function Intro() { return <section id="posicionamento" className="relative overflow-hidden border-t border-line bg-bg py-24 md:py-36 lg:py-44"><div className="shell grid grid-cols-1 gap-20 lg:grid-cols-12 lg:gap-8"><div className="lg:col-span-8 lg:pr-10"><Reveal><SectionIndex index="02 / 08" label="Posicionamento" /><p className="mt-12 max-w-4xl font-display text-[clamp(2.25rem,5.1vw,5.1rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">Detalhamento não é limpeza.<br /><span className="text-ink-dim">É controle sobre a luz.</span></p></Reveal><Reveal delay={120} className="mt-12 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2"><p className="max-w-md text-sm leading-7 text-ink-dim">Cada superfície conta uma história diferente. O trabalho começa quando o carro entra no box — e só termina quando cada reflexo está no lugar.</p><p className="label max-w-xs leading-7 text-ink-dim">Pouco volume.<br />Mais tempo por carro.<br />Mais atenção por centímetro.</p></Reveal></div><Reveal delay={180} className="relative lg:col-span-4 lg:pt-20"><div className="image-frame aspect-[4/5] overflow-hidden"><img src={detailImage} alt="Gotas de água sobre pintura preta espelhada" width={1920} height={1088} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] hover:scale-105" /></div><div className="mt-4 flex justify-between gap-4"><span className="label">Superfície / 01</span><span className="label text-accent-dim">reflexo controlado</span></div></Reveal></div></section>; }
+
+export function Intro() {
+  return (
+    <section id="posicionamento" className="relative overflow-hidden border-t border-line bg-bg py-24 md:py-36 lg:py-44">
+      <div className="shell grid grid-cols-1 gap-20 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-8 lg:pr-10">
+          <Reveal>
+            <SectionIndex index="02 / 08" label="Posicionamento" />
+            <h2 className="section-title mt-12 max-w-4xl font-display font-extrabold uppercase">
+              Detalhamento não é limpeza.<br />
+              <span className="text-ink-dim">É controle sobre a luz.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={120} className="mt-12 grid grid-cols-1 gap-8 border-t border-line pt-8 sm:grid-cols-2">
+            <p className="max-w-md text-sm leading-7 text-ink-dim">Cada superfície conta uma história diferente. O trabalho começa quando o carro entra no box — e só termina quando cada reflexo está no lugar.</p>
+            <p className="label max-w-xs leading-7 text-ink-dim">Pouco volume.<br />Mais tempo por carro.<br />Mais atenção por centímetro.</p>
+          </Reveal>
+        </div>
+        <Reveal delay={180} className="relative lg:col-span-4 lg:pt-20">
+          <div className="image-frame reveal-image aspect-[4/5] overflow-hidden">
+            <img src={detailImage} alt="Gotas de água sobre pintura preta espelhada" width={1920} height={1088} loading="lazy" className="h-full w-full object-cover" />
+          </div>
+          <div className="mt-4 flex justify-between gap-4"><span className="label">Superfície / 01</span><span className="label text-accent-dim">reflexo controlado</span></div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
