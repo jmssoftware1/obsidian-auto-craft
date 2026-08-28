@@ -15,8 +15,8 @@ export function Navbar() {
     </div>
     <div className={cn("fixed inset-x-0 top-[72px] z-[60] h-[calc(100svh-72px)] overflow-y-auto md:hidden", open ? "visible opacity-100" : "invisible opacity-0")} style={{ backgroundColor: "var(--color-bg)" }}>
       <nav aria-label="Menu móvel" className="shell flex min-h-full flex-col py-10 pb-16">
-        {navigationItems.map((item, index) => <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="mobile-nav-link grid grid-cols-[28px_minmax(0,1fr)] items-baseline border-t border-line py-5 font-display text-[clamp(1.65rem,8.5vw,2.7rem)] font-extrabold uppercase leading-[.98] tracking-[-0.035em]" style={{ transitionDelay: `${index * 50}ms` }}><span className="mr-0 font-mono text-[10px] font-normal tracking-[0.18em] text-accent">0{index + 1}</span><span className="min-w-0 break-words">{item.label}</span></a>)}
-        <a href={primaryCta.href} onClick={() => setOpen(false)} className="label mt-8 self-start border border-accent px-6 py-4 text-accent">{primaryCta.label}</a>
+        {navigationItems.map((item, index) => <a key={item.href} href={item.href} onClick={() => setOpen(false)} className={cn("mobile-nav-link grid grid-cols-[28px_minmax(0,1fr)] items-baseline border-t border-line py-5 font-display text-[clamp(1.65rem,8.5vw,2.7rem)] font-extrabold uppercase leading-[.98] tracking-[-0.035em]", open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0")} style={{ transitionDelay: `${index * 50}ms` }}><span className="mr-0 font-mono text-[10px] font-normal tracking-[0.18em] text-accent">0{index + 1}</span><span className="min-w-0 break-words">{item.label}</span></a>)}
+        <a href={primaryCta.href} onClick={() => setOpen(false)} className={cn("label mt-8 self-start border border-accent px-6 py-4 transition-opacity duration-500", open ? "opacity-100" : "opacity-0")}>{primaryCta.label}</a>
       </nav>
     </div>
   </header>;
