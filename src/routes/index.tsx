@@ -1,24 +1,62 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BeforeAfter } from "@/sections/BeforeAfter";
+import { CTA } from "@/sections/CTA";
+import { Detail } from "@/sections/Detail";
+import { Footer } from "@/sections/Footer";
+import { Hero } from "@/sections/Hero";
+import { Intro } from "@/sections/Intro";
+import { Navbar } from "@/sections/Navbar";
+import { Process } from "@/sections/Process";
+import { Results } from "@/sections/Results";
+import { Services } from "@/sections/Services";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Obsidian Garage — Estética automotiva de precisão";
+const description =
+  "Estúdio conceitual de estética automotiva: correção de pintura medida em micra, vitrificação em box fechado e recuperação de interiores.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AutoDetailing",
+          name: "Obsidian Garage",
+          description,
+          areaServed: "Projeto conceitual",
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="bg-bg text-ink">
+      <Navbar />
+      <main>
+        <Hero />
+        <Intro />
+        <Services />
+        <Detail />
+        <Process />
+        <BeforeAfter />
+        <Results />
+        <CTA />
+      </main>
+      <Footer />
     </div>
   );
 }
